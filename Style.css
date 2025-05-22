@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+:root {
+  --bg-color: #000;
+  --text-gradient: linear-gradient(to bottom, #2980b9, #2c3e50);
+  --day-opacity: 0.7; /* changed from 0.4 */
+  --btn-bg: #222;
+  --btn-color: #fff;
+}
+
+.light-mode {
+  --bg-color: #f1f1f1;
+  --text-gradient: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  --btn-bg: #fff;
+  --btn-color: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+  font-family: "Orbitron", sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+.wrapper {
+  text-align: center;
+  padding: 1rem;
+  max-width: 90%;
+}
+
+#toggleTheme {
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+#toggleTheme:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.text__color {
+  background: var(--text-gradient);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: inline-block;
+}
+
+.time__wrapper {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+#time {
+  font-size: 6rem;
+  text-shadow: 0 0 25px #2980b9;
+}
+
+#sec,
+#med {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+#med {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.day__wrapper span {
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.day__wrapper span.active {
+  opacity: 1;
+  font-weight: bold;
+  transform: scale(1.2);
+  text-shadow: 0 0 10px #3498db;
+}
+
+#full__date {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
